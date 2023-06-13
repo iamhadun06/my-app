@@ -1,7 +1,9 @@
 import React from 'react';
-function Main() {
+function Dashboard() {
     return (
+        <div>
         <h1> Hello world! </h1>
+        </div>
     )
 }
-export default Main;
+export default Dashboard;
