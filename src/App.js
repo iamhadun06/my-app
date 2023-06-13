@@ -31,9 +31,9 @@ const App = () => {
           <Route path = "/registration/AssetRegistration" element = {<AssetRegistration/>} /> 
           <Route path = "/registration/RegisterManagement" element = {<RegisterManagement/>} /> 
           <Route path = "/statistics/reports" element = {<StatisticsReports/>} /> 
-          <Route path = "/system/management/AssetCategories" element = {<AssetCategories/>} /> 
-          <Route path = "/system/management/department" element = {<Department/>} /> 
-          <Route path = "/system/management/user" element = {<User/>} /> 
+          <Route path = "/SystemManagement/AssetCategories" element = {<AssetCategories/>} /> 
+          <Route path = "/SystemManagement/department" element = {<Department/>} /> 
+          <Route path = "/SystemManagement/user" element = {<User/>} /> 
           <Route path = "/notifications" element = {<Notifications/>} /> 
         </Routes>
       </Sidebar>

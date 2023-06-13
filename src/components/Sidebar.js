@@ -80,7 +80,7 @@ const Sidebar = ({children, subNav }) => {
     
         {
             name: 'System Management', 
-            path: 'SystemManagement',
+            path: '/SystemManagement',
             icon: <FaAlignJustify/>,
             iconClosed: <FaAngleDown/>,
             iconOpened: <FaAngleUp/>,
