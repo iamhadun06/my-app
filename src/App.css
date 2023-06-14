@@ -27,32 +27,32 @@ main{
 
 .logo{
   background-image: url("./logo_kse.jpg");
-  width: 200px;
+  width: 210px;
   height: 70px;
   display: flex;
   top: 0%; right: 0%; left: 0%; 
   justify-content:'center'; 
   align-items: center;
-  background-size: 177px 74px;
+  background-size: 177px 79px;
 }
-.bars{
+
+.link{ /* chu tim thanh trang, design text*/
   display: flex;
-  font-size: 30px;
-  margin-left: 30px;
-}
-.link{
-  display: flex;
-  color: #fff;
-  padding: 15px 15px;
-  gap: 15px;
+  color: #ffffff;
+  padding: 15px 15px; /*dan cach dong va chu*/
+  gap: 15px; /* dan icon voi chu */
   transition: all 0s;
 }
 .link:hover{
   background:#D9D9D970;
   color: #ffffff;
-  transition: all 0.5s;
+  transition: all 0s;
 }
 
 .icon, .link_text{
+  font-size: 16px;
+}
+
+.link_SubMenu_text {
   font-size: 16px;
 }

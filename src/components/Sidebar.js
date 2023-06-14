@@ -1,8 +1,8 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable no-unused-vars */
-/* eslint-disable import/no-anonymous-default-export */
+// /* eslint-disable array-callback-return */
+// /* eslint-disable jsx-a11y/alt-text */
+// /* eslint-disable no-unused-vars */
+// /* eslint-disable import/no-anonymous-default-export */
 import React, {useState} from 'react'; 
-import SubMenu from './SubMenu';
 import {
     FaUserEdit, 
     FaListUl, 
@@ -14,19 +14,22 @@ import {MdDashboard, MdNotificationsActive} from "react-icons/md"
 import {NavLink} from 'react-router-dom'; 
 import {FaAngleDown} from "react-icons/fa";
 import {FaAngleUp} from "react-icons/fa"; 
-const Sidebar = ({children, subNav }) => {
+//import SubMenu from "./SubMenu";
+const Sidebar = ({children }) => {
     const[isOpen, setIsOpen] = useState(false); 
+    // eslint-disable-next-line no-unused-vars
     const toggle = () => setIsOpen (!isOpen);
+    
     const menuItem = [
         {
             name: "Dashboard",
             icon: <MdDashboard/>,
-            path: "/main",
+            path: "/Dashboard",
         },
         {
             name: "Profile",
             icon: <FaUserEdit/>,
-            path: "/profile",
+            path: "/Profile",
         },
 
         {
@@ -57,24 +60,24 @@ const Sidebar = ({children, subNav }) => {
         {
             name: "Registration",
             icon: <TbFilePencil/>, 
-            path: "/registration/",
+            path: "/Registration/",
             iconClosed: <FaAngleDown/>,
             iconOpened: <FaAngleUp/>,
             subNav: [
                 {
                     name: 'Asset Registration', 
-                    path: '/registration/AssetRegistration', 
+                    path: '/Registration/AssetRegistration', 
                 }, 
                 {
                     name: 'Register Management', 
-                    path: '/registration/RegisterManagement', 
+                    path: '/Registration/RegisterManagement', 
                 }
             ]
         },
     
         {
             name: 'Statistics - Reports', 
-            path: '/statistics/reports',
+            path: '/Statistics/Reports',
             icon: <FaRegChartBar/>, 
         },     
     
@@ -92,45 +95,50 @@ const Sidebar = ({children, subNav }) => {
                         
                 {
                     name: 'Department', 
-                    path: '/SystemManagement/department'
+                    path: '/SystemManagement/Department'
                 }, 
                 {
                     name: 'User', 
-                    path: '/SystemManagement/user'
+                    path: '/SystemManagement/User'
                 }, 
             ],
         },
     
         {
             name: 'Notifications', 
-            path: '/notifications',
+            path: '/Notifications',
             icon: <MdNotificationsActive/>, 
         },
     ]
     return (
-        <div className = "container" >
-            <div className = "sidebar">
-                <div className = "top_section" >
-                    <span className = "logo"> </span>
-                </div>
-                <div className="text">
-                    <div>
-                    {
-                        menuItem.map((item) => {
-                            <NavLink to = {item.path} className = "link" activeclassName = "active" >
-                            <div className = "icon"> {item.icon} </div>
-                            <div className="link_text"> {item.name} </div>
-                            </NavLink>
-                            return <SubMenu item={item} />
-                        }) 
-                    } 
+                <div className = "container" >
+                    <div className = "sidebar">
+                        <div className = "top_section" >
+                            <span className = "logo"> </span>
+                        <div className="bars"> </div>
+                        </div>
+                        { menuItem.map((item, index)=> (
+                        <NavLink to={item.path} key={index} className="link" activeclassName="active">
+                           <div className="icon">{item.icon}</div>
+                           <div className="link_text">{item.name}</div>
+                        </NavLink>
+                        // return <SubMenu item = {item}/>;
+                           ) 
+                        )
+                    }
+                        {/* <div sidebar={setIsOpen}>
+                        <SubMenu>
+                        <SubMenu to='#'>
+                        <FaAngleDown onClick={setIsOpen} />
+                        </SubMenu>
+                        {menuItem.map((item, index) => {
+                        return <SubMenu item={item} key={index} />;
+                        })}
+                        </SubMenu>
+                        </div> */}
                     </div>
+                    <main>{children}</main>
                 </div>
-                
-            </div>
-            
-    
-        </div>
-    );
-};
-export default Sidebar; 
+            );
+        };
+        export default Sidebar; 
