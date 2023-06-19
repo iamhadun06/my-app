@@ -1,4 +1,4 @@
-*{
+/* *{
   margin:0;
   padding:0;
   text-decoration: none;
@@ -37,11 +37,11 @@ main{
 }
 
 .link{ /* chu tim thanh trang, design text*/
-  display: flex;
+ /* display: flex;
   color: #ffffff;
   padding: 15px 15px; /*dan cach dong va chu*/
-  gap: 15px; /* dan icon voi chu */
-  transition: all 0s;
+/*  gap: 15px; /* dan icon voi chu */
+/*  transition: all 0s;
 }
 .link:hover{
   background:#D9D9D970;
@@ -53,6 +53,16 @@ main{
   font-size: 16px;
 }
 
-.link_SubMenu_text {
+.link_SubMenu {
+  flex: block;
   font-size: 16px;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
+

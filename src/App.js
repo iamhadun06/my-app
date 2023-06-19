@@ -15,7 +15,7 @@ import AssetCategories from './pages/SystemManagement/AssetCategories';
 import User from './pages/SystemManagement/User';
 import Department from './pages/SystemManagement/Department';
 import Notifications from './pages/Notifications/Notifications';
-import './App.css'
+
 const App = () => {
   return (
     <BrowserRouter>
